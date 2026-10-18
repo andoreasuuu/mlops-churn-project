@@ -15,3 +15,8 @@ def test_malvariabeln_ar_binar():
 def test_kund_id_ar_unikt():
     df = las_data()
     assert df["kund_id"].is_unique
+
+
+def test_alder_rimlig():
+    df = las_data()
+    assert df["alder"].between(16, 110).all()
